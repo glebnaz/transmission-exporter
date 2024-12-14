@@ -36,6 +36,6 @@ jobs:
           push: true
           tags: |
             ghcr.io/glebnaz/transmission-exporter:latest
-            ghcr.io/glebnaz/transmission-exporter:latest:${{ github.ref_name }}
+            ghcr.io/glebnaz/transmission-exporter:${{ github.ref_name }}
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.TOKENGH }}
