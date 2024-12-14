@@ -31,10 +31,13 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: ghcr.io
 
-      - name: Build and push Docker image
+      - name: Push Docker Image
         uses: docker/build-push-action@v4
         with:
-          context: .
-          platforms: linux/arm/v7
           push: true
-          tags: glebnaz/transmision-exporter:latest
+          tags: |
+            ghcr.io/glebnaz/transmission-exporter:latest
+            ghcr.io/glebnaz/transmission-exporter:latest:${{ github.ref_name }}
+          build-args: GITHUB_TOKEN=${{ DOCKER_PASSWORD }}
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.DOCKER_PASSWORD }}
