@@ -36,4 +36,4 @@ jobs:
           context: .
           platforms: linux/arm/v7
           push: true
-          tags: your-dockerhub-username/your-app-name:latest
+          tags: glebnaz/transmision-exporter:latest
