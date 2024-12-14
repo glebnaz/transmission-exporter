@@ -38,4 +38,4 @@ jobs:
             ghcr.io/glebnaz/transmission-exporter:latest
             ghcr.io/glebnaz/transmission-exporter:latest:${{ github.ref_name }}
           secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.DOCKER_PASSWORD }}
+            GIT_AUTH_TOKEN=${{ secrets.TOKENGH }}
